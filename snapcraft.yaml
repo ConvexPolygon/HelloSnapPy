@@ -1,0 +1,19 @@
+name: pyhellosnap
+version: '1.0'
+summary: HelloSnap is a simple test application for Snap. It was written in python.
+description: |
+  HelloSnap is a simple test application for Snap. It was written in python
+confinement: devmode
+base: core18
+
+parts:
+  pyhellosnap:
+    plugin: python
+    python-version: python2
+    source: https://github.com/ConvexPolygon/HelloSnap.git
+    stage-packages:
+      - python-six
+
+apps:
+  pyhellosnap:
+    command: python app/hello.py
